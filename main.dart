@@ -12,12 +12,14 @@ void main() {
           tryCount++;
           break;
         case 'no':
+          print("Bye Bye :)");
           break;
         default:
           print("Error");
       }
     } else {
       print("error");
+      break;
     }
   }
 }
