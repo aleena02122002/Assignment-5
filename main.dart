@@ -2,19 +2,23 @@ import 'dart:io';
 
 String? value1, value2;
 void main() {
-  if (functions()) {
-    stdout.write("Do you want to start again? yes/no : ");
-    String? choice = stdin.readLineSync();
-    switch (choice) {
-      case 'yes':
-        functions();
-      case 'no':
-        break;
-      default:
-        print("Error");
+  int tryCount = 0;
+  while (true) {
+    if (functions()) {
+      stdout.write("Do you want to start again? yes/no : ");
+      String? choice = stdin.readLineSync();
+      switch (choice) {
+        case 'yes':
+          tryCount++;
+          break;
+        case 'no':
+          break;
+        default:
+          print("Error");
+      }
+    } else {
+      print("error");
     }
-  } else {
-    print("error");
   }
 }
 
