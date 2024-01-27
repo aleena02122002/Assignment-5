@@ -5,21 +5,25 @@ void main() {
   int tryCount = 0;
   while (true) {
     if (functions()) {
+      print("");
       stdout.write("Do you want to start again? yes/no : ");
       String? choice = stdin.readLineSync();
+      print("");
       switch (choice) {
         case 'yes':
           tryCount++;
           break;
         case 'no':
+          print("");
           print("Bye Bye :)");
-          break;
+          print("");
+          return;
         default:
           print("Error");
       }
     } else {
-      print("error");
-      break;
+      print("Error");
+      break; // Add this line to exit the while loop if there is an error in functions()
     }
   }
 }
@@ -29,6 +33,7 @@ bool functions() {
       "Please Enter number \n 1) Temprature Converter \n 2) Lenght Converter \n 3) Time Converter ");
   stdout.write("Enter number: ");
   value2 = stdin.readLineSync();
+  print("");
 
   switch (value2) {
     case '1':
@@ -48,7 +53,7 @@ bool lenght() {
       "Please Enter number \n 1) M to Km \n 2) Km to M \n 3) Ft to In \n 4) In to Ft \n 5) Cm to M \n 6) M to Cm");
   stdout.write("Enter number: ");
   value2 = stdin.readLineSync();
-
+  print("");
   switch (value2) {
     case '1':
       stdout.write(" Value: ");
@@ -97,7 +102,7 @@ bool time() {
       "Please Enter number \n 1) Sec to Min \n 2) Min to Sec \n 3) Min to Hour \n 4) Sec to Hour \n 5) MilliSec to Min \n 6) MilliSec to Hour");
   stdout.write("Enter number: ");
   value2 = stdin.readLineSync();
-
+  print("");
   switch (value2) {
     case '1':
       stdout.write(" Value: ");
