@@ -2,6 +2,15 @@ import 'dart:io';
 
 String? value1, value2;
 void main() {
+  print(
+      "Please Enter number \n 1) Temprature Converter \n 2) Lenght Converter \n 3) Time Converter ");
+  stdout.write("Enter number: ");
+  value2 = stdin.readLineSync();
+
+  switch (value2) {
+    case '1':
+  }
+
   if (lenght()) {
     stdout.write("Do you want to start again? yes/no : ");
     String? choice = stdin.readLineSync();
@@ -109,6 +118,31 @@ bool time() {
       double value3 = double.tryParse(value1!) ?? 0.0;
       //meter_kilometer(value3);
       print(milli_hour(value3));
+    default:
+      print("Error");
+  }
+  return true;
+}
+
+bool temprature() {
+  print(
+      "Please Enter number \n 1) Fahrenhiet to Celsius \n 2) Celsius to Fahrenhiet");
+  stdout.write("Enter number: ");
+  value2 = stdin.readLineSync();
+
+  switch (value2) {
+    case '1':
+      stdout.write(" Value: ");
+      value1 = stdin.readLineSync();
+      double value3 = double.tryParse(value1!) ?? 0.0;
+      //meter_kilometer(value3);
+      print(sec_min(value3));
+    case '2':
+      stdout.write(" Value: ");
+      value1 = stdin.readLineSync();
+      double value3 = double.tryParse(value1!) ?? 0.0;
+      //meter_kilometer(value3);
+      print(min_sec(value3));
     default:
       print("Error");
   }
