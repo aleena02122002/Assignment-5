@@ -1,7 +1,22 @@
 import 'dart:io';
 
 String? value1, value2;
-void main() {}
+void main() {
+  if (code()) {
+    stdout.write("Do you want to start again? yes/no : ");
+    String? choice = stdin.readLineSync();
+    switch (choice) {
+      case 'yes':
+        code();
+      case 'no':
+        break;
+
+      default:
+        print("Error");
+    }
+  }
+}
+
 bool code() {
   print(
       "Please Enter number \n 1) M to Km \n 2) Km to M \n 3) Ft to In \n 4) In to Ft \n 5) Cm to M \n 6) M to Cm");
