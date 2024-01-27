@@ -68,7 +68,7 @@ bool lenght() {
 
 bool time() {
   print(
-      "Please Enter number \n 1) M to Km \n 2) Km to M \n 3) Ft to In \n 4) In to Ft \n 5) Cm to M \n 6) M to Cm");
+      "Please Enter number \n 1) Sec to Min \n 2) Min to Sec \n 3) Min to Hour \n 4) Sec to Hour \n 5) MilliSec to Min \n 6) MilliSec to Hour");
   stdout.write("Enter number: ");
   value2 = stdin.readLineSync();
 
@@ -78,37 +78,37 @@ bool time() {
       value1 = stdin.readLineSync();
       double value3 = double.tryParse(value1!) ?? 0.0;
       //meter_kilometer(value3);
-      print(meter_kilometer(value3));
+      print(sec_min(value3));
     case '2':
       stdout.write(" Value: ");
       value1 = stdin.readLineSync();
       double value3 = double.tryParse(value1!) ?? 0.0;
       //meter_kilometer(value3);
-      print(kilometer_meter(value3));
+      print(min_sec(value3));
     case '3':
       stdout.write(" Value: ");
       value1 = stdin.readLineSync();
       double value3 = double.tryParse(value1!) ?? 0.0;
       //meter_kilometer(value3);
-      print(feet_inches(value3));
+      print(min_hour(value3));
     case '4':
       stdout.write(" Value: ");
       value1 = stdin.readLineSync();
       double value3 = double.tryParse(value1!) ?? 0.0;
       //meter_kilometer(value3);
-      print(inches_feet(value3));
+      print(sec_hour(value3));
     case '5':
       stdout.write(" Value: ");
       value1 = stdin.readLineSync();
       double value3 = double.tryParse(value1!) ?? 0.0;
       //meter_kilometer(value3);
-      print(cm_meter(value3));
+      print(milli_min(value3));
     case '6':
       stdout.write(" Value: ");
       value1 = stdin.readLineSync();
       double value3 = double.tryParse(value1!) ?? 0.0;
       //meter_kilometer(value3);
-      print(meter_cm(value3));
+      print(milli_hour(value3));
     default:
       print("Error");
   }
