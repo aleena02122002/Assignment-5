@@ -2,6 +2,21 @@ import 'dart:io';
 
 String? value1, value2;
 void main() {
+  if (functions()) {
+    stdout.write("Do you want to start again? yes/no : ");
+    String? choice = stdin.readLineSync();
+    switch (choice) {
+      case 'yes':
+        functions();
+      case 'no':
+        break;
+      default:
+        print("Error");
+    }
+  }
+}
+
+bool functions() {
   print(
       "Please Enter number \n 1) Temprature Converter \n 2) Lenght Converter \n 3) Time Converter ");
   stdout.write("Enter number: ");
@@ -9,21 +24,15 @@ void main() {
 
   switch (value2) {
     case '1':
+      temprature();
+    case '2':
+      lenght();
+    case '3':
+      time();
+    default:
+      print("Try Again");
   }
-
-  if (lenght()) {
-    stdout.write("Do you want to start again? yes/no : ");
-    String? choice = stdin.readLineSync();
-    switch (choice) {
-      case 'yes':
-        lenght();
-      case 'no':
-        break;
-
-      default:
-        print("Error");
-    }
-  }
+  return true;
 }
 
 bool lenght() {
@@ -136,22 +145,16 @@ bool temprature() {
       value1 = stdin.readLineSync();
       double value3 = double.tryParse(value1!) ?? 0.0;
       //meter_kilometer(value3);
-      print(sec_min(value3));
+      print(f_to_c(value3));
     case '2':
       stdout.write(" Value: ");
       value1 = stdin.readLineSync();
       double value3 = double.tryParse(value1!) ?? 0.0;
       //meter_kilometer(value3);
-      print(min_sec(value3));
+      print(c_to_f(value3));
     default:
       print("Error");
   }
-  return true;
-}
-
-bool inputs() {
-  stdout.write("Enter value here: ");
-  value1 = stdin.readLineSync();
   return true;
 }
 
