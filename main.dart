@@ -13,6 +13,8 @@ void main() {
       default:
         print("Error");
     }
+  } else {
+    print("error");
   }
 }
 
